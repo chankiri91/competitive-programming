@@ -12,18 +12,6 @@ fun main() {
             b[i] = tmp
         }
     }
-    val modIntA = ModInt(a.joinToString("").toLong())
-    val modIntB = ModInt(b.joinToString("").toLong())
 
-
-    println(ModInt((modIntA * modIntB).value).value)
-}
-
-class ModInt(value: Long) {
-
-    val mod = 998244353L
-
-    val value = ((value % mod) + mod) % mod
-
-    operator fun times(other: ModInt): ModInt = ModInt(((value * other.value) % mod + mod) % mod)
+    println(a.joinToString("").toBigInteger() * b.joinToString("").toBigInteger() % (998244353).toBigInteger())
 }
